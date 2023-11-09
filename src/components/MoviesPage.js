@@ -1,12 +1,13 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import MoviesList from "./MoviesList";
+import { useParams } from "react-router-dom";
 
-function MoviesPage({ movies }) {
+function MovieShow({ movies }) {
+  const params = useParams();
   return (
     <div>
-      <MoviesList movies={movies} />
+      <h3>{movies[params.movieId].title}</h3>
     </div>
   );
 }
-export default MoviesPage;
+
+export default MovieShow;
